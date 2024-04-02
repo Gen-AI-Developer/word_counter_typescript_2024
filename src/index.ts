@@ -10,11 +10,14 @@ const str = await inquirer.prompt([
 function countWords(input: string): void {
     input = input.trim();
     if (input.length === 0) {
-        console.log('Input Unvalid')
+        console.log('Input invalid : please add some text.')
     }
-    const words: string[] = input.split(/\s+/);
-    console.log("Words = ", words.length)
-    console.log('Characters count =' + input.length)
+    else {
+        const words: string[] = input.split(/\s+/);
+        console.log("Words = ", words.length)
+        console.log('Characters count =' + input.length)
+    }
+
 
 }
 const text: string = str.inputString;
