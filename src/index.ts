@@ -7,5 +7,15 @@ const str = await inquirer.prompt([
         name: "inputString"
     }
 ])
-let WordCount = str.inputString.trim().split(/\s+/).lenght
-console.log('WordCount', WordCount)
+function countWords(input: string): void {
+    input = input.trim();
+    if (input.length === 0) {
+        console.log('Input Unvalid')
+    }
+    const words: string[] = input.split(/\s+/);
+    console.log("Words = ", words.length)
+    console.log('Characters count =' + input.length)
+
+}
+const text: string = str.inputString;
+countWords(text);
